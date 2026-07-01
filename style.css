@@ -1,184 +1,165 @@
-.grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
+:root {
+  --bg: #f7f9fc;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --primary: #0f4c81;
+  --primary-light: #e8f1fb;
+  --border: #d9e2ec;
+  --shadow: 0 8px 24px rgba(15, 76, 129, 0.08);
 }
-
-section {
-  grid-column: span 12;
-}
-
-figure {
-  grid-column: span 3;
-}
-
-.px {
-    text-align: justify;
-    text-justify: inter-word;
-    /*color: #545154; /* text */
-}
-
-
-h2 {
-  margin-bottom: 10px; /* Adjust this value as needed */
-  margin-top: 15px;
-}
-
-h4 {
-  margin-bottom: 10px; /* Adjust this value as needed */
-  margin-top: 15px;
-}
-
-
 
 body {
-  background: linear-gradient(to bottom, #2e2e2e, #1a1a1a); /* Dark graduated gray */
-  color: #f5f5f5; /* Light text for readability */
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-/* Cursor effect */
-.cursor {
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #fff; /* Cursor border color */
-  border-radius: 50%;
-  pointer-events: none; /* Prevent blocking clicks */
-  z-index: 1000;
-  transform: translate(-50%, -50%);
-  transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+.container {
+  max-width: 1050px;
 }
 
-.cursor-active {
-  width: 40px;
-  height: 40px;
-  background-color: rgba(255, 255, 255, 0.2); /* Inner glow */
-}
-
-
-/* Reset list styles */
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  color: #545154; /* text */
-}
-
-/* Tech-themed navigation bar */
 .tech-nav {
-  background-color: #f9f9f9;
-  border-radius: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  padding: 10px;
-  max-width: 600px; /* Adjust based on your layout */
-  margin: 20px auto;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 0.7rem 1rem;
+  margin: 1.5rem auto;
+  max-width: 850px;
 }
-
 
 .tech-nav ul {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
 }
 
 .tech-nav a {
+  color: var(--muted);
   text-decoration: none;
-  color: #a2a2a2;
-  font-weight: bold;
-  text-align: center;
-  display: block;
-  padding: 8px 10px;
-  transition: background-color 0.3s, color 0.3s; /
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
 }
 
-/*.tech-nav a.active, .tech-nav a:hover {
-  color: #505050;
-  background-color: #e8e8e8;
-  border-radius: 10px;
-  transition: background-color 0.3s, color 0.3s;
+.tech-nav a.active,
+.tech-nav a:hover {
+  color: var(--primary);
+  background: var(--primary-light);
 }
 
-/* Active link style */
-.tech-nav a.active {
-  background-color: #fadbad; /* Peach color for active state */
-  color: #505050; /* Darker text color for better readability */
-  border-radius: 10px; /* Rounded corners for a modern look */
+.hero {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
 }
 
-
-/* Hover style */
-.tech-nav a:hover, .tech-nav a:focus {
-  background-color: #fadbad; /* Peach color for hover */
-  color: #505050; /* Darker text color for better readability */
+.profile-photo {
+  width: 260px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid var(--border);
 }
 
-.tech-nav i {
-  display: block;
-  margin-bottom: 5px;
+.hero h1 {
+  margin-bottom: 0.3rem;
+  color: var(--primary);
 }
 
-/* Include Font Awesome */
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
-
-
-.lecture-content {
-    display: none;
+.subtitle {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
 }
 
-.hidden {
-    display: none;
+.keywords {
+  margin: 1rem 0;
+  color: var(--primary);
+  font-weight: 600;
 }
 
-.toggle {
-    cursor: pointer;
-    color: black; /* Styling for the toggle - can be adjusted */
+.actions {
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
 }
 
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid var(--primary);
+}
 
-/*This is for the blocks*/
+.btn.primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn.secondary {
+  color: var(--primary);
+  background: white;
+}
+
 .content-block {
-  background-color: #ffffff; /* or any color you prefer */
-  color: #545154; /* text */
-  border: 1px solid #ddd; /* light grey border */
-  border-radius: 4px; /* rounded corners */
-  padding: 20px; /* space inside the cards */
-  margin-bottom: 20px; /* space between the cards */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* subtle shadow */
-  font-size: 0.9rem;  /* for text size*/
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
+  box-shadow: var(--shadow);
 }
-.content-block p {
-  /* For paragraphs and list items within the block */
-  font-size: 0.9rem; /* Adjust as needed */
-  color: #545154; /* text */
-}
+
+.content-block h2,
+.content-block h3,
 .content-block h4 {
-  /* If you want to specifically adjust the size for headers within the block */
-  font-size: 1.1rem; /* Adjust as needed */
-  color: #545154; /* text */
+  color: var(--primary);
 }
 
-h4 {
-  margin-top: 0; /* remove top margin to reduce space to the border */
-}
-
-
-/* for the text to be justified */
-.content-block p,
-.content-block ul,
 .content-block li {
-    text-align: justify;
-    color: #545154; /* text */
+  color: var(--text);
+  margin-bottom: 0.5rem;
 }
 
-.subitems {
+#footer {
+  text-align: center;
+  color: var(--muted);
+  margin: 2rem 0 1rem;
   font-size: 0.9rem;
-  padding-left: 40px; 
 }
 
-
-.small-button {
-  font-size: 12px;
-  padding: 5px 10px;
-  display: inline-block; /* This will make the button only as wide as its content */
+#footer a {
+  color: var(--primary);
+  text-decoration: none;
 }
 
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .profile-photo {
+    margin: auto;
+  }
+
+  .actions {
+    justify-content: center;
+  }
+}

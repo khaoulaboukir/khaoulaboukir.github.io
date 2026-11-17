@@ -1,0 +1,40 @@
+# Local agent and editor configuration
+.agent/
+.agents/
+.codex/
+.cursor/
+.idea/
+.vscode/
+
+# Operating system and temporary files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*~
+*.bak
+*.tmp
+*.swp
+*.swo
+
+# LaTeX auxiliary files (keep sources and published PDFs)
+*.aux
+*.log
+*.out
+*.toc
+*.tns
+*.lof
+*.lot
+*.bbl
+*.bcf
+*.blg
+*-blx.bib
+*.run.xml
+*.synctex
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.cb
+*.cb2
+*.nav
+*.snm
+*.vrb
